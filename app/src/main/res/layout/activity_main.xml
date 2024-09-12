@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:background="@color/darkNeavy"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="?attr/actionBarSize">
+
+        <com.google.android.material.textview.MaterialTextView
+            android:layout_width="match_parent"
+            android:text="User List"
+            android:textSize="@dimen/_12sdp"
+            android:textColor="@color/white"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:padding="@dimen/_5sdp"
+            android:layout_height="wrap_content"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_5sdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@drawable/top_left_top_right"
+        app:layout_constraintTop_toBottomOf="@id/header">
+
+
+            <androidx.core.widget.NestedScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:orientation="vertical"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_height="wrap_content">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="match_parent"
+                        android:id="@+id/currentAddress"
+                        android:padding="@dimen/_5sdp"
+                        android:layout_height="wrap_content"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:id="@+id/userRecyclerView"
+                        android:layout_marginTop="@dimen/_10sdp"
+                        android:layout_height="wrap_content"/>
+                </LinearLayout>
+            </androidx.core.widget.NestedScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
